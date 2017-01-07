@@ -15,6 +15,7 @@ public class Main{
 		  boolean general = true;
 		  if(args.length < 1){
 			  argNumStr = "2568376268427";
+			//  argNumStr = "9428273968";
 		  }
 		  else if(args.length < 2){
 			  argNumStr = args[0];
@@ -47,7 +48,7 @@ public class Main{
 				String str = sa[1].toLowerCase();
 			//	System.out.println(sa[3]);
 				int freq = Integer.parseInt(sa[3]);
-				if(isLowercaseStr(str) && str.length()>1){
+				if(isLowercaseStr(str)){
 					insert(root,str);
 					setFreqent(root,str,freq);
 				}
@@ -106,7 +107,7 @@ public class Main{
 		  }
 		  if(p == null)return;
 		  if(p.isString())
-			  searchResult(root,root,s,idx+1);
+			  searchResult(root,root,s,idx);
 		  int num = (s.charAt(idx)-'0');
 		  /**sort char by frequent**/
 		  char sortch[] = new char[5];
