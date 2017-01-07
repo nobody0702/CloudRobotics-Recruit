@@ -12,7 +12,7 @@ public class Main{
 	  static String tmpres = "";
 	  public static void main(String args[]) throws IOException{
 		  String argNumStr = null;
-		  boolean general = false;
+		  boolean general = true;
 		  if(args.length < 1){
 			  argNumStr = "2568376268427";
 		  }
@@ -47,7 +47,7 @@ public class Main{
 				String str = sa[1].toLowerCase();
 			//	System.out.println(sa[3]);
 				int freq = Integer.parseInt(sa[3]);
-				if(isLowercaseStr(str)){
+				if(isLowercaseStr(str) && str.length()>1){
 					insert(root,str);
 					setFreqent(root,str,freq);
 				}
@@ -63,7 +63,7 @@ public class Main{
 			while((line = br.readLine())!=null) {
 				String[] sa = line.split("\\s+");
 				String str = sa[0].toLowerCase();
-				if(isLowercaseStr(str)){
+				if(isLowercaseStr(str)&&str.length()>1){
 					insert(root,str);
 				}
 			}
@@ -99,7 +99,7 @@ public class Main{
 	  }
 	  /*p is the pointer of TrieTree, idx is the index of String s*/
 	  public static void searchResult(TrieNode root,TrieNode p,String s,int idx){
-		  if(resultcnt >= 100000)return;
+		  if(resultcnt >= 10)return;
 		  if(idx >= s.length()){
 			  result[resultcnt++] = tmpres;
 			  return;
